@@ -20,11 +20,12 @@ CORS(app)  # Enable CORS for all routes
 # ============================================================================
 
 # Try both compatible and original model paths
-NVAPS_MODEL_PATH = 'nvaps_lstm_model_compatible.h5'  # Use the fixed model
-NVAPS_MODEL_PATH_FALLBACK = 'nvaps_lstm_model.h5'  # Fallback to original
-NVAPS_SCALER_PATH = 'nvaps_scaler.pkl'
-NVAPS_CONFIG_PATH = 'nvaps_config.json'
-NVAPS_LABEL_ENCODER_PATH = 'nvaps_label_encoder.pkl'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+NVAPS_MODEL_PATH = os.path.join(BASE_DIR, 'nvaps_lstm_model_compatible.h5')  # Use the fixed model
+NVAPS_MODEL_PATH_FALLBACK = os.path.join(BASE_DIR, 'nvaps_lstm_model.h5')  # Fallback to original
+NVAPS_SCALER_PATH = os.path.join(BASE_DIR, 'nvaps_scaler.pkl')
+NVAPS_CONFIG_PATH = os.path.join(BASE_DIR, 'nvaps_config.json')
+NVAPS_LABEL_ENCODER_PATH = os.path.join(BASE_DIR, 'nvaps_label_encoder.pkl')
 
 # ============================================================================
 # LOAD NVAPS MODEL AND CONFIGURATION
